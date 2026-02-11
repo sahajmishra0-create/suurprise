@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Shravan ❤️ - From Jyoti</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Pacifico&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #ff3366, #ff0066, #cc0066);
+            min-height: 100vh;
+            overflow-x: hidden;
+            font-family: 'Playfair Display', serif;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 900px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 25px;
+            padding: 40px;
+            box-shadow: 0 20px 40px rgba(204, 0, 102, 0.3);
+            position: relative;
+            z-index: 10;
+            border: 4px solid #ffccdd;
+            text-align: center;
+        }
+        
+        .title {
+            font-family: 'Pacifico', cursive;
+            color: #cc0066;
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .from-jyoti {
+            font-family: 'Dancing Script', cursive;
+            color: #ff0066;
+            font-size: 2.2rem;
+            margin-bottom: 40px;
+            font-weight: bold;
+            animation: heartbeat 2s infinite;
+        }
+        
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        .question {
+            background: linear-gradient(45deg, #ffe6ee, #ffd9e6);
+            padding: 30px;
+            border-radius: 20px;
+            margin: 30px auto;
+            font-size: 2rem;
+            color: #cc0066;
+            border: 3px solid #ff3366;
+            max-width: 700px;
+            box-shadow: 0 10px 20px rgba(255, 51, 102, 0.2);
+            font-family: 'Dancing Script', cursive;
+            font-weight: bold;
+        }
+        
+        .buttons-container {
+            position: relative;
+            height: 250px;
+            margin: 40px auto;
+            background: rgba(255, 240, 245, 0.8);
+            border-radius: 20px;
+            padding: 20px;
+            border: 3px dashed #ff0066;
+        }
+        
+        .valentine-button {
+            position: absolute;
+            padding: 25px 50px;
+            font-size: 2rem;
+            border: none;
+            border-radius: 60px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: bold;
+            z-index: 100;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            font-family: 'Playfair Display', serif;
+            letter-spacing: 1px;
+        }
+        
+        .yes-button {
+            background: linear-gradient(to right, #ff0066, #ff3366);
+            color: white;
+            left: 25%;
+            top: 60px;
+            border: 4px solid #ffccdd;
+        }
+        
+        .no-button {
+            background: linear-gradient(to right, #999999, #666666);
+            color: white;
+            right: 25%;
+            top: 140px;
+            border: 4px solid #cccccc;
+        }
+        
+        .valentine-button:hover {
+            transform: scale(1.08);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+        }
+        
+        .yes-button:hover {
+            background: linear-gradient(to right, #ff3366, #ff0066);
+        }
+        
+        .voice-player-container {
+            background: linear-gradient(45deg, #e8f5e9, #c8e6c9);
+            padding: 30px;
+            border-radius: 20px;
+            margin: 30px auto;
+            border: 4px solid #4CAF50;
+            display: none;
+            animation: fadeIn 1s;
+            max-width: 700px;
+        }
+        
+        .voice-player-container.show {
+            display: block;
+        }
+        
+        .voice-player-title {
+            color: #2E7D32;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .voice-player-title i {
+            color: #4CAF50;
+            font-size: 2rem;
+        }
+        
+        .voice-note {
+            color: #1B5E20;
+            font-size: 1.3rem;
+            margin-top: 15px;
+            font-style: italic;
+        }
+        
+        .message {
+            background: linear-gradient(45deg, #fff0f5, #ffe6ee);
+            padding: 40px;
+            border-radius: 20px;
+            margin: 30px auto;
+            box-shadow: 0 15px 30px rgba(204, 0, 102, 0.2);
+            font-size: 1.6rem;
+            color: #660033;
+            display: none;
+            position: relative;
+            border: 4px solid #ffccdd;
+            text-align: left;
+            line-height: 1.8;
+        }
+        
+        .message.show {
+            display: block;
+            animation: fadeInUp 1s;
+        }
+        
+        .message h2 {
+            color: #ff0066;
+            margin-bottom: 25px;
+            font-family: 'Dancing Script', cursive;
+            font-size: 3rem;
+            text-align: center;
+        }
+        
+        .highlight-text {
+            background: #ffe6ee;
+            padding: 20px;
+            border-radius: 15px;
+            margin: 25px 0;
+            border-left: 5px solid #ff0066;
+            font-size: 1.8rem;
+            color: #cc0066;
+            font-style: italic;
+            text-align: center;
+        }
+        
+        .signature {
+            text-align: right;
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.5rem;
+            color: #ff0066;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 2px dashed #ff99bb;
+        }
+        
+        .hearts-container {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: 1;
+            overflow: hidden;
+        }
+        
+        .heart {
+            position: absolute;
+            font-size: 30px;
+            animation: floatHeart 8s infinite ease-in-out;
+            opacity: 0.8;
+        }
+        
+        @keyframes floatHeart {
+            0%, 100% { 
+                transform: translateY(0) rotate(0deg); 
+                opacity: 0.8; 
+            }
+            50% { 
+                transform: translateY(-40px) rotate(15deg); 
+                opacity: 1; 
+            }
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes fadeInUp {
+            from { 
+                opacity: 0; 
+                transform: translateY(30px); 
+            }
+            to { 
+                opacity: 1; 
+                transform: translateY(0); 
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .title { font-size: 2.8rem; }
+            .from-jyoti { font-size: 1.8rem; }
+            .question { font-size: 1.8rem; padding: 20px; }
+            .valentine-button { 
+                font-size: 1.6rem; 
+                padding: 20px 40px;
+            }
+            .buttons-container { height: 220px; }
+            .yes-button { left: 10%; top: 40px; }
+            .no-button { right: 10%; top: 130px; }
+            .message { padding: 25px; font-size: 1.4rem; }
+            .message h2 { font-size: 2.5rem; }
+        }
+        
+        @media (max-width: 480px) {
+            .title { font-size: 2.2rem; }
+            .container { padding: 25px; }
+            .valentine-button { 
+                font-size: 1.3rem; 
+                padding: 15px 30px;
+                position: relative;
+                left: auto !important;
+                right: auto !important;
+                top: auto !important;
+                margin: 15px auto;
+                display: block;
+                width: 90%;
+            }
+            .buttons-container { height: auto; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating Hearts Background -->
+    <div class="hearts-container" id="heartsContainer"></div>
+    
+    <!-- Main Content -->
+    <div class="container">
+        <h1 class="title">Happy Valentine's Day ❤️</h1>
+        <div class="from-jyoti">Shravan❤️</div>
+        
+        <div class="question">
+            Will you be my Valentine?
+        </div>
+        
+        <div class="buttons-container">
+            <button class="valentine-button yes-button" id="yesBtn">
+                <i class="fas fa-heart"></i> YES! <i class="fas fa-heart"></i>
+            </button>
+            <button class="valentine-button no-button" id="noBtn">
+                <i class="fas fa-running"></i> NO <i class="fas fa-running"></i>
+            </button>
+        </div>
+        
+        <!-- YOUR EMBEDDED VOICE PLAYER -->
+        <div class="voice-player-container" id="voicePlayer">
+            <h3 class="voice-player-title">
+                <i class="fas fa-volume-up"></i> Listen to My Voice for You
+            </h3>
+            <div class="voice-embed">
+                <iframe width="300" height="60" src="https://vocaroo.com/embed/1eomoaeSdp3Z?autoplay=1" frameborder="0" allow="autoplay" style="border-radius: 10px;"></iframe>
+            </div>
+            <p class="voice-note">
+                "I love you Shravan!" ❤️
+            </p>
+        </div>
+        
+        <div class="message" id="message">
+            <h2>To my love Shravan ❤️, </h2>
+            
+            <p>Never thought of having a future with anybody else except you Shravan...</p>
+            
+            <div class="highlight-text">
+                You are my today and all of my tomorrow..
+            </div>
+            
+            <p>I love you and always be loving you no matter what ❤️</p>
+            
+            <div class="signature">
+                Forever yours ❤️<br>
+                Always Shravan's Jyoti 🤞❤️
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Create floating hearts
+        const heartsContainer = document.getElementById('heartsContainer');
+        for (let i = 0; i < 25; i++) {
+            const heart = document.createElement('div');
+            heart.className = 'heart';
+            heart.innerHTML = '❤️';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.top = Math.random() * 100 + 'vh';
+            heart.style.fontSize = (Math.random() * 30 + 20) + 'px';
+            heart.style.animationDelay = Math.random() * 5 + 's';
+            heart.style.color = i % 3 === 0 ? '#ff0066' : (i % 3 === 1 ? '#ff3366' : '#ff6699');
+            heartsContainer.appendChild(heart);
+        }
+        
+        // Get elements
+        const yesBtn = document.getElementById('yesBtn');
+        const noBtn = document.getElementById('noBtn');
+        const message = document.getElementById('message');
+        const voicePlayer = document.getElementById('voicePlayer');
+        
+        // Make NO button move
+        noBtn.addEventListener('mouseover', function() {
+            const container = document.querySelector('.buttons-container');
+            const containerRect = container.getBoundingClientRect();
+            
+            const maxX = containerRect.width - noBtn.offsetWidth - 40;
+            const maxY = containerRect.height - noBtn.offsetHeight - 40;
+            
+            const randomX = Math.floor(Math.random() * maxX);
+            const randomY = Math.floor(Math.random() * maxY);
+            
+            noBtn.style.left = randomX + 'px';
+            noBtn.style.top = randomY + 'px';
+            
+            // Change button text for fun
+            const messages = [
+                "Try again Shravan!",
+                "Catch me if you can!",
+                "Not today!",
+                "Almost got me!",
+                "You're close!"
+            ];
+            noBtn.innerHTML = `<i class="fas fa-running"></i> ${messages[Math.floor(Math.random() * messages.length)]} <i class="fas fa-running"></i>`;
+        });
+        
+        // Mobile touch support
+        noBtn.addEventListener('touchstart', function(e) {
+            e.preventDefault();
+            
+            const container = document.querySelector('.buttons-container');
+            const containerRect = container.getBoundingClientRect();
+            
+            const maxX = containerRect.width - noBtn.offsetWidth - 40;
+            const maxY = containerRect.height - noBtn.offsetHeight - 40;
+            
+            const randomX = Math.floor(Math.random() * maxX);
+            const randomY = Math.floor(Math.random() * maxY);
+            
+            noBtn.style.left = randomX + 'px';
+            noBtn.style.top = randomY + 'px';
+        });
+        
+        // When YES is clicked
+        yesBtn.addEventListener('click', function() {
+            // Show YOUR EMBEDDED VOICE PLAYER
+            voicePlayer.classList.add('show');
+            
+            // Show your message
+            message.classList.add('show');
+            
+            // Change YES button
+            yesBtn.innerHTML = '<i class="fas fa-heart"></i> I LOVE YOU TOO! <i class="fas fa-heart"></i>';
+            yesBtn.style.background = 'linear-gradient(to right, #32CD32, #228B22)';
+            yesBtn.disabled = true;
+            
+            // Create celebration hearts
+            createCelebrationHearts();
+            
+            // Play romantic melody
+            playRomanticMelody();
+            
+            // Scroll to voice player
+            setTimeout(() => {
+                voicePlayer.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }, 500);
+            
+            // Auto-play the voice after 1 second
+            setTimeout(() => {
+                try {
+                    // Try to play the embedded voice
+                    const iframe = voicePlayer.querySelector('iframe');
+                    if (iframe) {
+                        // Change autoplay parameter to 1
+                        iframe.src = iframe.src.replace('autoplay=0', 'autoplay=1');
+                    }
+                } catch (e) {
+                    console.log("Could not auto-play voice:", e);
+                }
+            }, 1000);
+        });
+        
+        // When NO is clicked
+        noBtn.addEventListener('click', function() {
+            const messages = [
+                "Shravan! Please click YES! ❤️",
+                "Okay you caught me! But please say YES!",
+                "You're too good! But my heart says YES!",
+                "Fine! But only because it's you Shravan!"
+            ];
+            
+            alert(messages[Math.floor(Math.random() * messages.length)]);
+            
+            // Still show voice player and message
+            voicePlayer.classList.add('show');
+            message.classList.add('show');
+            
+            // Change YES button
+            yesBtn.innerHTML = '<i class="fas fa-heart"></i> I LOVE YOU TOO! <i class="fas fa-heart"></i>';
+            yesBtn.style.background = 'linear-gradient(to right, #32CD32, #228B22)';
+            yesBtn.disabled = true;
+            
+            // Create celebration hearts
+            createCelebrationHearts();
+            
+            // Scroll to voice player
+            setTimeout(() => {
+                voicePlayer.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }, 500);
+            
+            // Try to auto-play voice
+            setTimeout(() => {
+                try {
+                    const iframe = voicePlayer.querySelector('iframe');
+                    if (iframe) {
+                        iframe.src = iframe.src.replace('autoplay=0', 'autoplay=1');
+                    }
+                } catch (e) {
+                    console.log("Could not auto-play voice:", e);
+                }
+            }, 1000);
+        });
+        
+        // Function to create celebration hearts
+        function createCelebrationHearts() {
+            for (let i = 0; i < 30; i++) {
+                setTimeout(() => {
+                    const heart = document.createElement('div');
+                    heart.innerHTML = '❤️';
+                    heart.style.position = 'fixed';
+                    heart.style.fontSize = (Math.random() * 40 + 30) + 'px';
+                    heart.style.left = Math.random() * 100 + 'vw';
+                    heart.style.top = '100vh';
+                    heart.style.zIndex = '1000';
+                    heart.style.opacity = '0.9';
+                    heart.style.pointerEvents = 'none';
+                    document.body.appendChild(heart);
+                    
+                    const animation = heart.animate([
+                        { transform: 'translateY(0) rotate(0deg)', opacity: 1 },
+                        { transform: 'translateY(-100vh) rotate(360deg)', opacity: 0 }
+                    ], {
+                        duration: 2000 + Math.random() * 1000,
+                        easing: 'cubic-bezier(0.215, 0.610, 0.355, 1)'
+                    });
+                    
+                    animation.onfinish = () => {
+                        if (heart.parentNode) {
+                            heart.parentNode.removeChild(heart);
+                        }
+                    };
+                }, i * 100);
+            }
+        }
+        
+        // Function to play romantic melody
+        function playRomanticMelody() {
+            try {
+                const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+                
+                const notes = [
+                    {freq: 523.25, duration: 0.4}, // C5
+                    {freq: 659.25, duration: 0.4}, // E5
+                    {freq: 783.99, duration: 0.6}, // G5
+                    {freq: 659.25, duration: 0.4}, // E5
+                    {freq: 523.25, duration: 0.8}  // C5
+                ];
+                
+                notes.forEach((note, index) => {
+                    setTimeout(() => {
+                        const oscillator = audioContext.createOscillator();
+                        const gainNode = audioContext.createGain();
+                        
+                        oscillator.connect(gainNode);
+                        gainNode.connect(audioContext.destination);
+                        
+                        oscillator.frequency.value = note.freq;
+                        oscillator.type = 'sine';
+                        
+                        gainNode.gain.setValueAtTime(0.1, audioContext.currentTime);
+                        gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + note.duration);
+                        
+                        oscillator.start(audioContext.currentTime);
+                        oscillator.stop(audioContext.currentTime + note.duration);
+                    }, index * 300);
+                });
+            } catch (e) {
+                // Audio context not supported
+            }
+        }
+        
+        // Initialize button positions
+        window.addEventListener('load', function() {
+            const container = document.querySelector('.buttons-container');
+            const containerRect = container.getBoundingClientRect();
+            
+            // Position YES button
+            const yesX = containerRect.width * 0.25 - yesBtn.offsetWidth / 2;
+            const yesY = 60;
+            yesBtn.style.left = yesX + 'px';
+            yesBtn.style.top = yesY + 'px';
+            
+            // Position NO button
+            const noX = containerRect.width * 0.75 - noBtn.offsetWidth / 2;
+            const noY = 140;
+            noBtn.style.left = noX + 'px';
+            noBtn.style.top = noY + 'px';
+            
+            // Welcome message
+            console.log("%c❤️ FOR SHRAVAN FROM JYOTI ❤️", "color: #ff0066; font-size: 24px; font-weight: bold;");
+            console.log("%cClick YES to hear Jyoti's voice!", "color: #ff0066; font-size: 16px;");
+        });
+    </script>
+</body>
+</html>
